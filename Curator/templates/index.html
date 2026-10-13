@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unseenia Asset Curator</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 40px; }
+        img { border: 2px solid #444; image-rendering: pixelated; width: 256px; }
+        button { font-size: 20px; padding: 10px 20px; margin: 10px; }
+        .reject { background: #b33; color: white; }
+        .rate { background: #333; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>Unseenia Asset Curator</h1>
+
+    <img src="/static/generated.png?ts={{ ts }}" alt="Generated Asset">
+
+    <form action="/rate" method="POST">
+        <!-- Hidden metadata fields (optional) -->
+        <input type="hidden" name="seed" value="12345">
+        <input type="hidden" name="traits" value="fire-warrior">
+        <input type="hidden" name="username" value="example_user">
+        <input type="hidden" name="emoji_sequence" value="🔥🐉">
+
+        <div>
+            <button class="reject" name="rating" value="reject">Reject</button>
+        </div>
+
+        <div>
+            <button class="rate" name="rating" value="1">1</button>
+            <button class="rate" name="rating" value="2">2</button>
+            <button class="rate" name="rating" value="3">3</button>
+            <button class="rate" name="rating" value="4">4</button>
+        </div>
+    </form>
+
+</body>
+</html>
